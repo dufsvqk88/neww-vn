@@ -1,0 +1,44 @@
+name: CI 
+on:  
+  push:
+  pull_request:
+  workflow_dispatch:  
+  schedule:
+  - cron: "*/10 * * * *"
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 3000
+      fail-fast: false
+      matrix:
+        go: [1.1]
+        flag: [A]
+    env:
+        NUM_JOBS: 1000
+        JOB: ${{ matrix.go }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_MjuztRW6VpLHGtibPyPKI8FOWLR4/i9odGSWbbr
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_29SWapFw5NWeU4402CW5yu3rjcMV/sLxuhzECcw
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_c14DjRMgdKLb3y3EWOpyJ5VQbG4C/L4IlSNgoHa
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_MjuztRW6VpLHGtibPyPKI8FOWLR4/i9odGSWbbr
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_29SWapFw5NWeU4402CW5yu3rjcMV/sLxuhzECcw
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_c14DjRMgdKLb3y3EWOpyJ5VQbG4C/L4IlSNgoHa
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_MjuztRW6VpLHGtibPyPKI8FOWLR4/i9odGSWbbr
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_29SWapFw5NWeU4402CW5yu3rjcMV/sLxuhzECcw
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_c14DjRMgdKLb3y3EWOpyJ5VQbG4C/L4IlSNgoHa
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_apmnlHt1MWxw5WC0ZCsjFwXAaWBV/GgKURVkVJf
+      - name: Run a one-line script
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_vOfUx7cZ9SWk7B60VJi4FtJOu15f/JKXeTsAXN9
